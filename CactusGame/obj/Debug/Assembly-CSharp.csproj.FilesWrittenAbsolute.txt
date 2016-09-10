@@ -11,3 +11,7 @@
 /Users/brian/Desktop/CactusGame/CactusGame/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/brian/Desktop/CactusGame/CactusGame/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/brian/Desktop/CactusGame/CactusGame/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/brian/Desktop/CactusGame/CactusGame/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/brian/Desktop/CactusGame/CactusGame/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/brian/Desktop/CactusGame/CactusGame/obj/Debug/Assembly-CSharp.dll
+/Users/brian/Desktop/CactusGame/CactusGame/obj/Debug/Assembly-CSharp.dll.mdb

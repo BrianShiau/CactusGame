@@ -71,6 +71,7 @@
      <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyAttack.cs" />
      <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyMovement.cs" />
+     <Compile Include="Assets\_CompletedAssets\Scripts\Grid\Grid.cs" />
      <Compile Include="Assets\_CompletedAssets\Scripts\Managers\EnemyManager.cs" />
      <Compile Include="Assets\_CompletedAssets\Scripts\Managers\GameOverManager.cs" />
      <Compile Include="Assets\_CompletedAssets\Scripts\Managers\PauseManager.cs" />
@@ -78,7 +79,6 @@
      <Compile Include="Assets\_CompletedAssets\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\_CompletedAssets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\_CompletedAssets\Scripts\Player\PlayerShooting.cs" />
-     <Compile Include="Assets\_CompletedAssets\Scripts\World\World.cs" />
      <None Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
      <None Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />

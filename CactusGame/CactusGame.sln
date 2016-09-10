@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{CCE0B5ED-1DF2-3CF9-A011-C67EEDC1F6A6}") = "CactusGame", "Assembly-CSharp.csproj", "{5A4E77A4-25A6-E4B7-77A2-2D394DDD917B}"
+EndProject
+Project("{CCE0B5ED-1DF2-3CF9-A011-C67EEDC1F6A6}") = "CactusGame", "Assembly-CSharp-Editor.csproj", "{34F16D8B-BD62-D40B-A5F7-D5E4F086319B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A4E77A4-25A6-E4B7-77A2-2D394DDD917B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A4E77A4-25A6-E4B7-77A2-2D394DDD917B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A4E77A4-25A6-E4B7-77A2-2D394DDD917B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A4E77A4-25A6-E4B7-77A2-2D394DDD917B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F16D8B-BD62-D40B-A5F7-D5E4F086319B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F16D8B-BD62-D40B-A5F7-D5E4F086319B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F16D8B-BD62-D40B-A5F7-D5E4F086319B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F16D8B-BD62-D40B-A5F7-D5E4F086319B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

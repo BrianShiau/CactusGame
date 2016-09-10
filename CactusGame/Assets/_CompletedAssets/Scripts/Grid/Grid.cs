@@ -8,6 +8,8 @@ public class Grid : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		grid = new GameObject[8][];
+
+
 	}
 	
 	// Update is called once per frame
@@ -19,9 +21,9 @@ public class Grid : MonoBehaviour {
 
 	}
 
-	public bool AddToWorld(float x, float y, GameObject plant){
-		int angle = (int) (WorldToAngle (x, y) / 45);
-		int magnitude = (int) (WorldToMagnitude (x, y) / 20);
+	public bool AddToWorld(float x, float z, GameObject plant){
+		int angle = (int) (WorldToAngle (x, z) / 45);
+		int magnitude = (int) (WorldToMagnitude (x, z) / 20);
 		if (grid [angle] [magnitude])
 			return false;
 		grid[angle][magnitude] = plant;
@@ -29,16 +31,17 @@ public class Grid : MonoBehaviour {
 		float newAngle = angle * 45f + 22.5f;
 		float newMagnitude = magnitude * 20f + 10f;
 		float newX = newMagnitude * Mathf.Cos(newAngle);
-		float newY = newMagnitude * Mathf.Sin(newAngle);
-		plant.transform.position.Set (newX, newY, 0f);
+		float newZ = newMagnitude * Mathf.Sin(newAngle);
+		plant.transform.position.Set (newX, 0f, newZ);
+		plant.transform.rotation.SetLookRotation (new Vector3(newX, 0f, newZ));
 		return true;
 	}
 
-	public float WorldToAngle(float x, float y){
-		return Mathf.Atan2 (y, x) * (180 / Mathf.PI);
+	public float WorldToAngle(float x, float z){
+		return Mathf.Atan2 (z, x) * (180 / Mathf.PI);
 	}
 
-	public float WorldToMagnitude(float x, float y){
-		return Mathf.Sqrt (Mathf.Pow (x, 2) + Mathf.Pow (y, 2));
+	public float WorldToMagnitude(float x, float z){
+		return Mathf.Sqrt (Mathf.Pow (x, 2) + Mathf.Pow (z, 2));
 	}
 }

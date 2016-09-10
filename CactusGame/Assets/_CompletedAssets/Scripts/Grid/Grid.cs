@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class World : MonoBehaviour {
-	public GameObject[][] world;
+public class Grid : MonoBehaviour {
+	public GameObject[][] grid;
 
 	// Use this for initialization
 	void Start () {
-		world = new GameObject[8][];
+		grid = new GameObject[8][];
 	}
 	
 	// Update is called once per frame
@@ -22,9 +22,9 @@ public class World : MonoBehaviour {
 	public bool AddToWorld(float x, float y, GameObject plant){
 		int angle = (int) (WorldToAngle (x, y) / 45);
 		int magnitude = (int) (WorldToMagnitude (x, y) / 20);
-		if (world [angle] [magnitude])
+		if (grid [angle] [magnitude])
 			return false;
-		world[angle][magnitude] = plant;
+		grid[angle][magnitude] = plant;
 
 		float newAngle = angle * 45f + 22.5f;
 		float newMagnitude = magnitude * 20f + 10f;

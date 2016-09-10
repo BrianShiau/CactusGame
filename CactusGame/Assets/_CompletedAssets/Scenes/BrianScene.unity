@@ -3821,7 +3821,7 @@ GameObject:
   - 64: {fileID: 1986162103}
   - 23: {fileID: 1986162102}
   m_Layer: 0
-  m_Name: World
+  m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3,6 +3,11 @@ using System.Collections;
 
 public class RatEnemy : AbstractEnemy {
 
+    public RatEnemy()
+    {
+
+    }
+
 	// Use this for initialization
 	void Start () {
 	

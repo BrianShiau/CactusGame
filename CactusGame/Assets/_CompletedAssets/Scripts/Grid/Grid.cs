@@ -8,6 +8,8 @@ public class Grid : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		grid = new GameObject[8][];
+
+
 	}
 	
 	// Update is called once per frame
@@ -31,6 +33,7 @@ public class Grid : MonoBehaviour {
 		float newX = newMagnitude * Mathf.Cos(newAngle);
 		float newZ = newMagnitude * Mathf.Sin(newAngle);
 		plant.transform.position.Set (newX, 0f, newZ);
+		plant.transform.rotation.SetLookRotation (new Vector3(newX, 0f, newZ));
 		return true;
 	}
 

@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKey(KeyCode.E))
         {
             // check item cost
-            if(inventory[selectedItem].cost <= water)
+            // if(inventory[selectedItem].cost <= water)
 
         }
 

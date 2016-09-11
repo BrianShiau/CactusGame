@@ -8,7 +8,6 @@ public abstract class AbstractEnemy : MonoBehaviour {
     public int attack;
     public float attackTimer;
 
-    public GameObject player;
 
     protected float timeSinceLastAttack;
 

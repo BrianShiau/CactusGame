@@ -33,7 +33,7 @@ public class RatEnemy : AbstractEnemy {
         }
         if (obj.tag == "MamaCactus" && timeSinceLastAttack >= attackTimer)
         {
-            player.GetComponent<Player>().loseWater(attack);
+            obj.GetComponent<MamaCactus>().TakeDamage(attack);
             timeSinceLastAttack = 0;
         }
 

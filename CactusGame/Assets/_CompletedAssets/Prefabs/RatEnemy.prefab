@@ -111,6 +111,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012915982570}
   - 95: {fileID: 95000013313326582}
+  - 114: {fileID: 114000012389787974}
   m_Layer: 0
   m_Name: RatEnemy
   m_TagString: Untagged
@@ -609,6 +610,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000012389787974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011042419862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657bd0fb2e9db6741bc18688a466cfee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  speed: 5
+  attack: 10
+  attackTimer: 2
+  pointsWorth: 10
+  player: {fileID: 1000013173804652, guid: 000e3f498dbc9c14b8da26a3b63fb762, type: 2}
 --- !u!137 &137000010761669838
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

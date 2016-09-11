@@ -112,6 +112,7 @@ GameObject:
   - 4: {fileID: 4000012915982570}
   - 95: {fileID: 95000013313326582}
   - 114: {fileID: 114000012389787974}
+  - 136: {fileID: 136000012195177138}
   m_Layer: 0
   m_Name: RatEnemy
   m_TagString: Untagged
@@ -627,6 +628,19 @@ MonoBehaviour:
   attackTimer: 2
   pointsWorth: 10
   player: {fileID: 1000013173804652, guid: 000e3f498dbc9c14b8da26a3b63fb762, type: 2}
+--- !u!136 &136000012195177138
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011042419862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 5.33
+  m_Height: 25.2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137000010761669838
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

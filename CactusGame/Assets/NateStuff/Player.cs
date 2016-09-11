@@ -72,5 +72,9 @@ public class Player : MonoBehaviour {
         
     }
 
-
+	public void loseWater(int loss){
+		water -= loss;
+		if (water <= 0)
+			//lose the game
+	}
 }

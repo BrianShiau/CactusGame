@@ -118,6 +118,8 @@ MonoBehaviour:
   - {fileID: 1990307714}
   - {fileID: 634506290}
   - {fileID: 1802081319}
+  level: 0
+  levelTime: 30
 --- !u!1 &28357257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1131,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1151,7 +1153,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!4 &461218465
 Transform:
   m_ObjectHideFlags: 0

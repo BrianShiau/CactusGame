@@ -37,6 +37,7 @@ public class Player : MonoBehaviour {
         waterSlider = UISliders[1];
         healthSlider.maxValue = health;
         waterSlider.maxValue = waterCap;
+        waterSlider.value = water;
 		healthSliderFill.color = Color.red;
 		waterSliderFill.color = Color.blue;
 

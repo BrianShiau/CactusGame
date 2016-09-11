@@ -332,9 +332,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   water: 100
+  waterCap: 1000
   respawnTimer: 5
   inventory: []
   world: {fileID: 0}
+  UICanvas: {fileID: 1000011570506740, guid: 7d862488529cc3143adfafa9d4245406, type: 2}
 --- !u!124 &124000010487316078
 Behaviour:
   m_ObjectHideFlags: 1

@@ -21,6 +21,7 @@ public class RatEnemy : AbstractEnemy {
     void OnCollisionEnter(Collision col)
     {
         GameObject obj = col.gameObject;
+		Debug.Log (obj.tag);
         if (obj.tag == "Player" && timeSinceLastAttack >= attackTimer)
         {
             obj.GetComponent<Player>().takeDamage(attack);

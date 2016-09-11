@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
     private int selectedItem;
     private Vector3 respawnLocation;
     private float timeSinceDeath;
+	private bool dead;
     private float timeSinceLastAttack;
     public float timeSinceLastPlacement;
     private int startingHealth;
@@ -54,10 +55,11 @@ public class Player : MonoBehaviour {
 	
 	void FixedUpdate () {
 
-        if (timeSinceDeath >= respawnTimer)
+        if (dead && timeSinceDeath >= respawnTimer)
         {
             GetComponent<Rigidbody>().isKinematic = false;
             health = startingHealth;
+			dead = false;
         }
 
         if (health > 0)
@@ -103,10 +105,13 @@ public class Player : MonoBehaviour {
 
     public void takeDamage(int damage)
     {
+		Debug.Log ("TOOK" + damage);
         health-=damage;
         healthSlider.value = health > 0 ? health : 0;
         if (health <= 0)
             kill();
+		Debug.Log (health);
+		Debug.Log (healthSlider.value);
     }
 
     public void kill()
@@ -114,7 +119,7 @@ public class Player : MonoBehaviour {
         GetComponent<Rigidbody>().isKinematic = true;
         gameObject.transform.position = respawnLocation;
         timeSinceDeath = 0;
-        
+		dead = true;
     }
 
     public void addWater(int added)

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MamaCactus : MonoBehaviour {
 
-	public Player player;
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +16,6 @@ public class MamaCactus : MonoBehaviour {
 	}
 
 	public void TakeDamage(int damage){
-		player.loseWater (damage);
+		player.GetComponent<Player>().loseWater (damage);
 	}
 }

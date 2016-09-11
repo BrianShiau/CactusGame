@@ -42,8 +42,8 @@ public class Player : MonoBehaviour {
         Slider[] UISliders = UICanvas.GetComponentsInChildren<Slider>();
         scoreText = UICanvas.GetComponentInChildren<Text>();
         scoreText.text = "Score: 0";
-        healthSlider = UISliders[0];
-        waterSlider = UISliders[1];
+        //healthSlider = UISliders[0];
+        //waterSlider = UISliders[1];
         healthSlider.maxValue = health;
         waterSlider.maxValue = waterCap;
         waterSlider.value = water;
@@ -59,6 +59,7 @@ public class Player : MonoBehaviour {
         {
             GetComponent<Rigidbody>().isKinematic = false;
             health = startingHealth;
+			healthSlider.value = health > 0 ? health : 0;
 			dead = false;
         }
 
@@ -105,13 +106,10 @@ public class Player : MonoBehaviour {
 
     public void takeDamage(int damage)
     {
-		Debug.Log ("TOOK" + damage);
         health-=damage;
         healthSlider.value = health > 0 ? health : 0;
         if (health <= 0)
             kill();
-		Debug.Log (health);
-		Debug.Log (healthSlider.value);
     }
 
     public void kill()

@@ -8,9 +8,11 @@ public class Player : MonoBehaviour {
     public int water;
     public int waterCap;
     public int attackDamage;
+    public int score;
     public float respawnTimer;
     public float attackTimer;
     public float attackDistance;
+    
 
     
     public List<Placeable> inventory;
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour {
     public Slider waterSlider;
 	public Image healthSliderFill;
 	public Image waterSliderFill;
+    private Text scoreText;
     
 
     // Use this for initialization
@@ -33,6 +36,8 @@ public class Player : MonoBehaviour {
         respawnLocation = transform.position;
         startingHealth = health;
         Slider[] UISliders = UICanvas.GetComponentsInChildren<Slider>();
+        scoreText = UICanvas.GetComponentInChildren<Text>();
+        scoreText.text = "Score: 0";
         healthSlider = UISliders[0];
         waterSlider = UISliders[1];
         healthSlider.maxValue = health;
@@ -40,6 +45,7 @@ public class Player : MonoBehaviour {
         waterSlider.value = water;
 		healthSliderFill.color = Color.red;
 		waterSliderFill.color = Color.blue;
+
 
 	}
 	
@@ -109,6 +115,13 @@ public class Player : MonoBehaviour {
             water = waterCap;
 
         waterSlider.value = water;
+
+    }
+
+    public void addScore(int score)
+    {
+        this.score += score;
+        scoreText.text = "Score: " + score;
 
     }
 

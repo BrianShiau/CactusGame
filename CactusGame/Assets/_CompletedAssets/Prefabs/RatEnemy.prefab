@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  speed: 5
+  speed: 10
   attack: 10
   attackTimer: 2
   pointsWorth: 10

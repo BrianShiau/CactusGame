@@ -17,8 +17,10 @@ public class Player : MonoBehaviour {
     private Vector3 respawnLocation;
     private float timeSinceDeath;
     private int startingHealth;
-    private Slider healthSlider;
-    private Slider waterSlider;
+    public Slider healthSlider;
+    public Slider waterSlider;
+	public Image healthSliderFill;
+	public Image waterSliderFill;
     
 
     // Use this for initialization
@@ -30,8 +32,8 @@ public class Player : MonoBehaviour {
         waterSlider = UISliders[1];
         healthSlider.maxValue = health;
         waterSlider.maxValue = waterCap;
-        healthSlider.image.color = Color.red;
-        waterSlider.image.color = Color.blue;
+		healthSliderFill.color = Color.red;
+		waterSliderFill.color = Color.blue;
 
 	}
 	

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Player : MonoBehaviour {
     public int health;
@@ -62,7 +63,10 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
 
         if (timeSinceDeath >= respawnTimer)
+        {
+            GetComponent<Rigidbody>().isKinematic = false;
             health = startingHealth;
+        }
 
         if (health > 0)
         {
@@ -114,7 +118,7 @@ public class Player : MonoBehaviour {
 
     public void kill()
     {
-        gameObject.SetActive(false);
+        GetComponent<Rigidbody>().isKinematic = true;
         gameObject.transform.position = respawnLocation;
         timeSinceDeath = 0;
         

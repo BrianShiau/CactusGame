@@ -4,7 +4,7 @@ namespace CompleteProject
 {
     public class EnemyManager : MonoBehaviour
     {
-        public PlayerHealth playerHealth;       // Reference to the player's heatlh.
+        //public PlayerHealth playerHealth;       // Reference to the player's heatlh.
         public GameObject enemy;                // The enemy prefab to be spawned.
         public float spawnTime = 3f;            // How long between each spawn.
         public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.

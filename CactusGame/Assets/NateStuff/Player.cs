@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     public int waterCap;
     public int attackDamage;
     public int score;
+    public int numPlaceables;
     public float respawnTimer;
     public float attackTimer;
     public float placementTimer;
@@ -18,21 +19,19 @@ public class Player : MonoBehaviour {
     public GameObject UICanvas;
 
     // add one of these for each placeable
-    public Transform placeableCactus;
+    public GameObject placeableCactus;
 
     private int selectedItem;
     private Vector3 respawnLocation;
     private float timeSinceDeath;
     private float timeSinceLastAttack;
-    private float timeSinceLastPlacement;
+    public float timeSinceLastPlacement;
     private int startingHealth;
     public Slider healthSlider;
     public Slider waterSlider;
 	public Image healthSliderFill;
 	public Image waterSliderFill;
     private Text scoreText;
-    private List<Placeable> inventory;
-    private List<Transform> uninstancedPlaceables;
 
 
     // Use this for initialization
@@ -49,13 +48,6 @@ public class Player : MonoBehaviour {
         waterSlider.value = water;
 		healthSliderFill.color = Color.red;
 		waterSliderFill.color = Color.blue;
-
-        // ---need to do this for each new placeable object
-        uninstancedPlaceables.Add(placeableCactus);
-        GameObject placeableObj = (GameObject) Instantiate(placeableCactus, transform.position, Quaternion.identity);
-        placeableObj.SetActive(false);
-        inventory.Add(placeableObj.GetComponent<Placeable>());
-        // ---
 
 
 	}
@@ -75,19 +67,20 @@ public class Player : MonoBehaviour {
             if (Input.GetKey(KeyCode.E))
             {
                 // check item cost
-                if (inventory[selectedItem].cost <= water && timeSinceLastPlacement >= placementTimer)
+                if (10 <= water && timeSinceLastPlacement >= placementTimer)
                 {
-                    GameObject placeableObj = (GameObject)Instantiate(uninstancedPlaceables[selectedItem], transform.position, Quaternion.identity);
+                    water -= 10;
+                    timeSinceLastPlacement = 0.0f;
+                    GameObject placeableObj = (GameObject)Instantiate(placeableCactus, transform.position, Quaternion.identity);
                     world.GetComponent<Grid>().AddToWorld(transform.position.x, transform.position.z, placeableObj);
-                    water -= inventory[selectedItem].cost;
-                    timeSinceLastPlacement = 0;
+                    
                 }
             }
 
             if (Input.GetKey(KeyCode.Q))
             {
                 selectedItem++;
-                if (selectedItem >= inventory.Count)
+                if (selectedItem >= numPlaceables)
                     selectedItem = 0;
 
             }
@@ -103,9 +96,9 @@ public class Player : MonoBehaviour {
 
     }
 
-    public Placeable getSelectedItem()
+    public GameObject getSelectedItem()
     {
-        return inventory[selectedItem];
+        return placeableCactus;
     }
 
     public void takeDamage(int damage)

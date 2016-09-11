@@ -7,7 +7,11 @@ public class Player : MonoBehaviour {
     public int health;
     public int water;
     public int waterCap;
+    public int attackDamage;
     public float respawnTimer;
+    public float attackTimer;
+    public float attackDistance;
+
     
     public List<Placeable> inventory;
     public GameObject world;
@@ -16,6 +20,7 @@ public class Player : MonoBehaviour {
     private int selectedItem;
     private Vector3 respawnLocation;
     private float timeSinceDeath;
+    private float timeSinceLastAttack;
     private int startingHealth;
     private Slider healthSlider;
     private Slider waterSlider;
@@ -36,6 +41,9 @@ public class Player : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
+
+        if (timeSinceDeath >= respawnTimer)
+            health = startingHealth;
 
         if (health > 0)
         {
@@ -61,9 +69,12 @@ public class Player : MonoBehaviour {
         }
         else
         {
-
+            // dead, wait for respawn
         }
-         
+
+        timeSinceLastAttack += Time.deltaTime;
+        timeSinceDeath += Time.deltaTime;
+
     }
 
     public Placeable getSelectedItem()
@@ -82,7 +93,8 @@ public class Player : MonoBehaviour {
     public void kill()
     {
         gameObject.SetActive(false);
-        gameObject.transform.position = respawnLocation; 
+        gameObject.transform.position = respawnLocation;
+        timeSinceDeath = 0;
         
     }
 
@@ -106,5 +118,23 @@ public class Player : MonoBehaviour {
 			//lose the game
 		}
 	}
+
+    public void attack()
+    {
+        if (timeSinceLastAttack >= attackTimer)
+        {
+            RaycastHit hitinfo;
+            Physics.Raycast(transform.position, transform.forward, out hitinfo, attackDistance);
+            if (hitinfo.collider != null)
+            {
+                if (hitinfo.collider.tag == "Enemy")
+                {
+                    hitinfo.collider.gameObject.GetComponent<AbstractEnemy>().takeDamage(attackDamage);
+                }
+            }
+
+            timeSinceLastAttack = 0;
+        }
+    }
 
 }

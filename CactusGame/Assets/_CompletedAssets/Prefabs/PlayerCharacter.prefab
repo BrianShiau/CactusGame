@@ -334,12 +334,19 @@ MonoBehaviour:
   water: 100
   waterCap: 1000
   attackDamage: 5
+  score: 0
   respawnTimer: 5
   attackTimer: 2
+  placementTimer: 10
   attackDistance: 1
-  inventory: []
-  world: {fileID: 0}
+  world: {fileID: 1000011345111092, guid: d8b5ca14ffec747aa8e6ce4f838312f8, type: 2}
   UICanvas: {fileID: 1000011570506740, guid: 7d862488529cc3143adfafa9d4245406, type: 2}
+  placeableCactus: {fileID: 4000010194795070, guid: bf91519a042e5014abe5c9a18d6388d4,
+    type: 2}
+  healthSlider: {fileID: 0}
+  waterSlider: {fileID: 0}
+  healthSliderFill: {fileID: 0}
+  waterSliderFill: {fileID: 0}
 --- !u!124 &124000010487316078
 Behaviour:
   m_ObjectHideFlags: 1

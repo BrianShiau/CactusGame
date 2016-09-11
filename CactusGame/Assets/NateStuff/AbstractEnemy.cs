@@ -7,6 +7,9 @@ public abstract class AbstractEnemy : MonoBehaviour {
     public int speed;
     public int attack;
     public float attackTimer;
+    public int pointsWorth;
+
+    public GameObject player;
 
 
     protected float timeSinceLastAttack;
@@ -35,6 +38,7 @@ public abstract class AbstractEnemy : MonoBehaviour {
 
     public void kill()
     {
+        player.GetComponent<Player>().addScore(pointsWorth);
         Destroy(gameObject);
     }
 }

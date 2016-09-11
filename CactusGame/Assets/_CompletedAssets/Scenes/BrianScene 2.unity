@@ -959,7 +959,7 @@ Prefab:
     - target: {fileID: 224000010979245196, guid: 7d862488529cc3143adfafa9d4245406,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.33333334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010979245196, guid: 7d862488529cc3143adfafa9d4245406,
         type: 2}
@@ -986,6 +986,24 @@ Prefab:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012326599050, guid: 7d862488529cc3143adfafa9d4245406,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ae93238e0bd2417bbd713e02f7e312c,
+        type: 3}
+    - target: {fileID: 114000012914708272, guid: 7d862488529cc3143adfafa9d4245406,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 27f9dc562fec54d8897fa5324adabeab,
+        type: 3}
+    - target: {fileID: 114000010864463726, guid: 7d862488529cc3143adfafa9d4245406,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3904ead6b0fc4a47a9c227fc0ec457e,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d862488529cc3143adfafa9d4245406, type: 2}
   m_IsPrefabParent: 0

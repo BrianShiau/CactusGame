@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
     public float respawnTimer;
     
     public List<Placeable> inventory;
-    public Grid world; 
+    public GameObject world; 
 
     private int selectedItem;
     private Vector3 respawnLocation;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
                 // check item cost
                 if (inventory[selectedItem].cost <= water)
                 {
-                    world.AddToWorld(transform.position.x, transform.position.z, inventory[selectedItem].gameObject);
+                    world.GetComponent<Grid>().AddToWorld(transform.position.x, transform.position.z, inventory[selectedItem].gameObject);
                     water -= inventory[selectedItem].cost;
                 }
             }
@@ -58,9 +58,9 @@ public class Player : MonoBehaviour {
         return inventory[selectedItem];
     }
 
-    public void takeDamage()
+    public void takeDamage(int damage)
     {
-        health--;
+        health-=damage;
         if (health <= 0)
             kill();
     }
@@ -70,6 +70,16 @@ public class Player : MonoBehaviour {
         gameObject.SetActive(false);
         gameObject.transform.position = respawnLocation; 
         
+    }
+
+    public void loseWater(int lost)
+    {
+        water -= lost;
+    }
+
+    public void addWater(int added)
+    {
+        water += added;
     }
 
 

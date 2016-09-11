@@ -12,4 +12,21 @@ public class PlaceableCactus : Placeable {
 	void Update () {
 	
 	}
+
+    public PlaceableCactus()
+    {
+
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        GameObject obj = col.gameObject;
+        if (obj.tag == "Enemy" && timeSinceLastAttack >= attackTimer)
+        {
+            obj.GetComponent<AbstractEnemy>().takeDamage(attack);
+            timeSinceLastAttack = 0;
+        }
+
+    }
+
 }

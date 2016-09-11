@@ -91,6 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 10
+  health: 30
+  attack: 1
+  attackTimer: 2
 --- !u!135 &135000012164467564
 SphereCollider:
   m_ObjectHideFlags: 1

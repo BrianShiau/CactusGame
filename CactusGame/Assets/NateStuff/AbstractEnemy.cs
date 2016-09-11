@@ -5,15 +5,37 @@ public abstract class AbstractEnemy : MonoBehaviour {
 
     public int health;
     public int speed;
+    public int attack;
+    public float attackTimer;
+
+    public GameObject player;
+
+    protected float timeSinceLastAttack;
+
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         transform.Translate(speed * transform.forward * Time.deltaTime);
+        timeSinceLastAttack += Time.deltaTime;
 
 	}
+
+    
+
+    public void takeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+            kill();
+    }
+
+    public void kill()
+    {
+        Destroy(gameObject);
+    }
 }
